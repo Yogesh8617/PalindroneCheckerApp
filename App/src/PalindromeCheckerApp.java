@@ -1,12 +1,28 @@
-// version 1.0
+// version 2.0
 //author yogesh
-//usecase 1: welcome page
+//usecase 2: hardcore palindrome
 
-public class PalindromeCheckerApp
-{
-    public static void main(String[] args)
-    {
-        System.out.println("Welcome to Palindrome Checker Management System\nVersion : 1.0" +
-                "\n System initialized Successfully");
+import java.util.Scanner;
+
+public class PalindromeCheckerApp {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a word: ");
+        String word = scanner.nextLine();
+
+        String reversed = "";
+
+        for (int i = word.length() - 1; i >= 0; i--) {
+            reversed = reversed + word.charAt(i);
+        }
+
+        boolean isPalindrome = word.equalsIgnoreCase(reversed);
+
+        System.out.println("Is it palindrome? " + isPalindrome);
+
+        scanner.close();
     }
 }
